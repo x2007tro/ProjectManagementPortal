@@ -1,7 +1,3 @@
-library(readxl)
-
-fp <- "input/WSCC_RateSetting_Instructions.xls"
-
 ##
 # Parse instruction table into list
 ##
@@ -64,5 +60,3 @@ ParseComment <- function(comt){
   
   return(tmp3)
 }
-
-x <- ParseInstructions(fp)

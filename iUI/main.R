@@ -1,7 +1,9 @@
 ##
 # Source all ui files
 ##
-ui_files <- c("time_entry", "file_preview", "conf")
+ui_files <- c("wc_wscc_aval", "wc_wscc_rset", "wc_wscc_opeb",
+              "otr_pnb_ltd", "otr_pnbdh_dp",
+              "conf")
 lapply(ui_files, function(f){
   source(paste0("./iUI/", f, ".R"), local = FALSE)
 })
@@ -19,19 +21,52 @@ mainUI <- fluidPage(theme = shinythemes::shinytheme("simplex"),
   navbarPage(
     "Project Management Portal",
     ##
-    # Time entry tab
+    # Workers comp tab
     ##
     tabPanel(
-      "Time entry",
-      tp_time_entry
+      "Workers Compensation",
+      navlistPanel(
+        ##
+        # WSCC related
+        "WSCC",
+        widths = c(2, 10),
+        tp_wc_wscc_aval,
+        tp_wc_wscc_rset,
+        tp_wc_wscc_opeb,
+        
+        ##
+        # Yukon related
+        "Yukon"
+      )
     ),
+    
     ##
-    # File Preview
+    # Pension
+    ##
+    # tabPanel(
+    #   "Pension",
+    # ),
+    
+    ##
+    # Investment
+    ##
+    # tabPanel(
+    #   "Investment"
+    # ),
+    
+    ##
+    # Other
     ##
     tabPanel(
-      "File Preview",
-      tp_file_preview
+      "Other",
+      navlistPanel(
+        "Project",
+        widths = c(2, 10),
+        tp_otr_pnb_ltd,
+        tp_otr_pnbdh_dp
+      )
     ),
+    
     ##
     # Configuration
     ##

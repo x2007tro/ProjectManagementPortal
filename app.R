@@ -4,6 +4,7 @@
 library(readxl)
 library(shinythemes)
 library(DT)
+library(lubridate)
 
 ##
 # Source server and ui components
@@ -11,7 +12,7 @@ library(DT)
 source("global.R", local = FALSE)
 source("iUI/main.R")
 source("iServer/main.R")
-source("helper/util.R")
+source("helper/inst_parser.R")
 
 ##
 # Launch shiny app

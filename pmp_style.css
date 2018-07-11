@@ -22,22 +22,39 @@ body {
 .block_title {
   color:white;
   font-weight:bold;
-  padding:5px 0;
+  padding:5px;
   background-color:rgba(35,43,43,1);
 }
 
 /*
  * Entry setting
  */
-.dlyconf_div, .wlyconf_div, .tr_div {
+.proj_conf_div, .task_div {
   margin:3px;
   padding:2px;
   float:left;
 }
 
-.gloconf_div {
-  margin:3px;
-  padding:2px;
+.task_cat_div {
+  font-weight:bold;
+}
+
+.inst_div {
+  margin:28px 5px 5px 5px;
+  padding:5px;
+  border:1px solid rgba(153, 153, 153, 0.8);
+  border-radius:5px;
+  float:left;
+}
+
+#instr_div, #save_div {
+  font-weight:bold;
+  width:80px;
+  padding-top:35px;
+}
+
+#instr_a {
+  color:gray;
 }
 
 /*
