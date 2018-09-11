@@ -50,3 +50,9 @@ A webapp to track project status for different lines of business
 	- Ignore the step without # or numerical values
 	- '/n' will be replaced with space
 	- Any sentence starting with [#?#] will be parsed into a new line
+	
+## Required Packages
+- require(shiny)
+- require(shinythemes)
+- require(readxl)
+- require(DT)
