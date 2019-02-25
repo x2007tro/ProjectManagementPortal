@@ -40,7 +40,9 @@ tp_configuration <- tabPanel(
                   ##
                   # Real content starts here
                   tags$div(class = "gloconf_div", textInput("gloconf_tmp1", "WSCC RSet Instruction", value = wc_wscc_rs_ipt_fp, width = entry_wid_l)),
-                  tags$div(class = "gloconf_div", textInput("gloconf_tmp2", "WSCC Rset Output", value = wc_wscc_rs_opt_loc, width = entry_wid_l))
+                  tags$div(class = "gloconf_div", textInput("gloconf_tmp2", "WSCC Rset Output", value = wc_wscc_rs_opt_loc, width = entry_wid_l)),
+                  tags$div(class = "gloconf_div", textInput("gloconf_tmp3", "WSCC Ben Val Instruction", value = wc_wscc_bval_ipt_fp, width = entry_wid_l)),
+                  tags$div(class = "gloconf_div", textInput("gloconf_tmp4", "WSCC Ben Val Output", value = wc_wscc_bval_opt_loc, width = entry_wid_l))
                 )
               )
             )

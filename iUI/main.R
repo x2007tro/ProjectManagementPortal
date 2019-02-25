@@ -1,7 +1,7 @@
 ##
 # Source all ui files
 ##
-ui_files <- c("wc_wscc_aval", "wc_wscc_rset", "wc_wscc_opeb",
+ui_files <- c("wc_wscc_bval", "wc_wscc_rset", "wc_wscc_opeb",
               "otr_pnb_ltd", "otr_pnbdh_dp",
               "conf")
 lapply(ui_files, function(f){
@@ -30,7 +30,7 @@ mainUI <- fluidPage(theme = shinythemes::shinytheme("simplex"),
         # WSCC related
         "WSCC",
         widths = c(2, 10),
-        tp_wc_wscc_aval,
+        tp_wc_wscc_bval,
         tp_wc_wscc_rset,
         tp_wc_wscc_opeb,
         

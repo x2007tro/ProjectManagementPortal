@@ -13,17 +13,30 @@ tasks <- reactive({
     message = 'Reading data',
     detail = 'This may take a while...', value = 0, 
     {
-      res <- ParseInstructions(fp = input$gloconf_tmp1)
+      rset_res <- ParseInstructions(fp = input$gloconf_tmp1)
+    }
+  )
+  
+  ##
+  # wc wscc ben val
+  withProgress(
+    message = 'Reading data',
+    detail = 'This may take a while...', value = 0, 
+    {
+      bval_res <- ParseInstructions(fp = input$gloconf_tmp3)
     }
   )
   
   ##
   # enter the next project
+  ##
+  
   
   ##
   # complie final list
   inst <- list()
-  inst$wc$wscc$rset <- res
+  inst$wc$wscc$rset <- rset_res
+  inst$wc$wscc$ben_val <- bval_res
   
   return(inst)
 })
