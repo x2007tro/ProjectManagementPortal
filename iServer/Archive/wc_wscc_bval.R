@@ -195,61 +195,61 @@ output$wc_wscc_bval_inst <- renderUI({
 ##
 # Handle save progress
 ##
-observe({
-  
-  tasks <- tasks()$wc$wscc$ben_val
-  n <- length(tasks)
-  lapply(1:n, function(i){
-    
-    ##
-    # Listen to save commend
-    observeEvent({
-      input[[paste0("wc_wscc_bval_con_note_save", i)]]
-    },{
-      
-      ##
-      # Initialize data.frame
-      res_df <- data.frame(
-        Step = as.character(),
-        Task = as.character(),
-        Action = as.character(),
-        Status = as.character(),
-        AnalystComment = as.character(),
-        ConsultantComment = as.character(),
-        stringsAsFactors = FALSE
-      )
-      
-      ##
-      # Write to df
-      for(j in 1:n){
-        if(tasks[[j]]$step != "#"){
-          res_df[j, "Step"] <- input[[paste0("wc_wscc_bval_stp",j)]]
-          res_df[j, "Task"] <- input[[paste0("wc_wscc_bval_tsk",j)]]
-          res_df[j, "Action"] <- input[[paste0("wc_wscc_bval_act",j)]]
-          res_df[j, "Status"] <- input[[paste0("wc_wscc_bval_sta",j)]]
-          res_df[j, "AnalystComment"] <- input[[paste0("wc_wscc_bval_ana_note",j)]]
-          res_df[j, "ConsultantComment"] <- input[[paste0("wc_wscc_bval_con_note",j)]]
-        } else {
-          res_df[j, "Step"] <- "#"
-        }
-      }
-      
-      ##
-      # Remove unwanted df
-      res_df <- res_df[!is.na(res_df$Step),]
-      
-      ##
-      # save to CSV file
-      outfp <- paste0(input$gloconf_tmp2, rs_prg_fn, input$wc_wscc_bval_rsy, ".csv")
-      if(file.exists(outfp)) file.remove(outfp)
-      write.csv(res_df, file = outfp, row.names = FALSE)
-      
-      ##
-      # output message
-      if(file.exists(outfp)) msg <- "File saved!" else msg <- "File not saved!"
-      output[[paste0("wc_wscc_bval_task_msg", i)]] <- renderText({ msg })
-    })
-    
-  })
-  
-})
+# observe({
+#   
+#   tasks <- tasks()$wc$wscc$ben_val
+#   n <- length(tasks)
+#   lapply(1:n, function(i){
+#     
+#     ##
+#     # Listen to save commend
+#     observeEvent({
+#       input[[paste0("wc_wscc_bval_con_note_save", i)]]
+#     },{
+#       
+#       ##
+#       # Initialize data.frame
+#       res_df <- data.frame(
+#         Step = as.character(),
+#         Task = as.character(),
+#         Action = as.character(),
+#         Status = as.character(),
+#         AnalystComment = as.character(),
+#         ConsultantComment = as.character(),
+#         stringsAsFactors = FALSE
+#       )
+#       
+#       ##
+#       # Write to df
+#       for(j in 1:n){
+#         if(tasks[[j]]$step != "#"){
+#           res_df[j, "Step"] <- input[[paste0("wc_wscc_bval_stp",j)]]
+#           res_df[j, "Task"] <- input[[paste0("wc_wscc_bval_tsk",j)]]
+#           res_df[j, "Action"] <- input[[paste0("wc_wscc_bval_act",j)]]
+#           res_df[j, "Status"] <- input[[paste0("wc_wscc_bval_sta",j)]]
+#           res_df[j, "AnalystComment"] <- input[[paste0("wc_wscc_bval_ana_note",j)]]
+#           res_df[j, "ConsultantComment"] <- input[[paste0("wc_wscc_bval_con_note",j)]]
+#         } else {
+#           res_df[j, "Step"] <- "#"
+#         }
+#       }
+#       
+#       ##
+#       # Remove unwanted df
+#       res_df <- res_df[!is.na(res_df$Step),]
+#       
+#       ##
+#       # save to CSV file
+#       outfp <- paste0(input$gloconf_tmp2, rs_prg_fn, input$wc_wscc_bval_rsy, ".csv")
+#       if(file.exists(outfp)) file.remove(outfp)
+#       write.csv(res_df, file = outfp, row.names = FALSE)
+#       
+#       ##
+#       # output message
+#       if(file.exists(outfp)) msg <- "File saved!" else msg <- "File not saved!"
+#       output[[paste0("wc_wscc_bval_task_msg", i)]] <- renderText({ msg })
+#     })
+#     
+#   })
+#   
+# })
