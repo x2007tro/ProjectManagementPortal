@@ -13,7 +13,8 @@ proj_dir <- list(
   `Workers Comp` = list(
     `NWT WSCC` = list(
       `Rate Setting` = "input/wc/wscc/rset.xls",
-      `Benefits Valuation` = "input/wc/wscc/ben_val.xls"
+      `Benefits Valuation` = "input/wc/wscc/ben_val.xls",
+      `OPEB` = "input/wc/wscc/opeb.xls"
     )
   ),
   `Other` = list(
