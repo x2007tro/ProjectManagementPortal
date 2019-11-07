@@ -1,17 +1,15 @@
 ##
 # Source all ui files
 ##
-# ui_files <- c("wc_wscc_bval", "wc_wscc_rset", "wc_wscc_opeb",
-#               "otr_pnb_ltd", "otr_pnbdh_dp",
-#               "conf")
-# lapply(ui_files, function(f){
-#   source(paste0("./iUI/", f, ".R"), local = FALSE)
-# })
+ui_files <- c("select_proj", "display_proj")
+lapply(ui_files, function(f){
+  source(paste0("./iUI/", f, ".R"), local = FALSE)
+})
 
 ##
 # Shiny ui
 ##
-mainUI <- fluidPage(theme = shinythemes::shinytheme("simplex"),
+mainUI <- fluidPage(theme = shinythemes::shinytheme("darkly"),
   
   # css style
   tags$head(
@@ -19,6 +17,11 @@ mainUI <- fluidPage(theme = shinythemes::shinytheme("simplex"),
   ),
   
   # main output
-  uiOutput("main_output")
+  navlistPanel(
+    "Project Portal",
+    widths = c(2, 10),
+    tp_select_proj,
+    tp_display_proj
+  )
 
 )
