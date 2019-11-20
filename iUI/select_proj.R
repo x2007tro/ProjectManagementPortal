@@ -1,7 +1,7 @@
 ##
 # Select project
 tp_select_proj <- tabPanel(
-  "Select project",
+  "Select Project",
   
   tabsetPanel(
     tabPanel(

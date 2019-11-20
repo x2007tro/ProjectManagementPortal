@@ -23,7 +23,14 @@ body {
   color:white;
   font-weight:bold;
   padding:5px;
-  background-color:rgba(35,43,43,1);
+  background-color:rgba(255,127,80,1);   /* orange */
+}
+
+.client_block_title {
+  color:white;
+  font-weight:bold;
+  padding:5px;
+  background-color:rgba(150,127,80,1);   /* orange */
 }
 
 /*

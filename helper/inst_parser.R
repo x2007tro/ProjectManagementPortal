@@ -60,3 +60,11 @@ ParseComment <- function(comt){
   
   return(tmp3)
 }
+
+##
+# Parse improvement tables
+##
+ParseImpTables <- function(fp){
+  content_df <- as.data.frame(readxl::read_excel(fp, sheet = "Improvements", col_names = TRUE))
+  return(content_df)
+}

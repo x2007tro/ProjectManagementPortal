@@ -6,7 +6,19 @@ output$task_output <- renderUI({
   
   tabsetPanel(
     tabPanel(
-        paste0(input$lob, " - ", input$client, " - ", input$project),
+        "What to do now",
+        
+        ##
+        # Client Code
+        fluidRow(
+          column(
+            width = 12,
+            tags$h3(
+              class = "client_block_title",
+              paste0(input$lob, " - ", input$client, " - ", input$project)
+            )
+          )
+        ),
 
         ##
         # Section task
@@ -150,8 +162,45 @@ output$task_output <- renderUI({
           )
         )
         
-      )
+    ),
+    
+    tabPanel(
+      "What to do later",
+      
+      ##
+      # Client Code
+      fluidRow(
+        column(
+          width = 12,
+          tags$h3(
+            class = "client_block_title",
+            paste0(input$lob, " - ", input$client, " - ", input$project)
+          )
+        )
+      ),
+      
+      DT::dataTableOutput("imp_tbl")
+    )
   )
   
+})
+
+output$imp_tbl <- DT::renderDataTable({
+  res <- imp_tbls[[input$lob]][[input$client]][[input$project]]
+
+  DT::datatable(
+    res, 
+    options = list(
+      pageLength = 20,
+      orderClasses = TRUE,
+      searching = TRUE,
+      paging = TRUE
+    ) 
+  ) %>%
+    DT::formatStyle(
+      c("Job ID", "Name", "Description", "Change Category", "Priority", "Status", "Entry Date", "Completion Date"),
+      #fontWeight = "bold",
+      color = "black"
+    )
 })
   
