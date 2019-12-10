@@ -148,7 +148,8 @@ output$task_output <- renderUI({
                               lapply(1:length(fcomt_k), function(j){
                                 if(comt_k[j] == "") tags$p("None") else tags$p(fcomt_k[j])
                               })
-                            )
+                            ),
+                            tags$div(class = "task_div", id = "instr_div", tags$a(id = "instr_a", href=paste0("#stp",k), "Go back"))
                           )
                           
                         }

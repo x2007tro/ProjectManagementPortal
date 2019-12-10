@@ -4,7 +4,7 @@
 entry_wid_s <- "80px"
 entry_wid_m <- "120px"
 entry_wid_l <- "250px"
-entry_wid_xl <- "700px"
+entry_wid_xl <- "1200px"
 brewed_colors <- rep(RColorBrewer::brewer.pal(n = 9, name = "Set3"), 100)
 
 ##
