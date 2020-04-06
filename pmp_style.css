@@ -50,6 +50,9 @@ body {
   margin:28px 5px 5px 5px;
   padding:5px;
   border:1px solid rgba(153, 153, 153, 0.8);
+  background-color: rgba(199, 234, 70, 1);   /* lime */
+  color:gray;
+  font-weight:bold;
   border-radius:5px;
   float:left;
 }

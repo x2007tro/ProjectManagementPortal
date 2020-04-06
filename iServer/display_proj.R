@@ -44,7 +44,8 @@ output$task_output <- renderUI({
                   step_k <- tasks[[k]]$step
                   task_k <- tasks[[k]]$task
                   action_k <- tasks[[k]]$action
-                  
+                  comt_k <- tasks[[k]]$comt
+                  fcomt_k <- tasks[[k]]$fcomt
 
                   fluidRow(
                     column(
